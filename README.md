@@ -15,8 +15,8 @@ Simple utility to send internet usage statistics using vnstat and vnstati linux 
     $ sudo apt install vnstat && sudo apt install vnstati
 
     $ echo 'export GMAIL_SMTP_ID="your-gmail-id"' >> ~/.<shell_rc_file>
-    $ echo 'export GMAIL_SMTP_PASSWORD="your-gmail-passwrod" >> ~/.<shell_rc_file>
-    $ echo 'export MY_EMAIL_ADDRESS='your-gmail-email' >> ~/.<shell_rc_file>
+    $ echo 'export GMAIL_SMTP_PASSWORD="your-gmail-passwrod"' >> ~/.<shell_rc_file>
+    $ echo 'export MY_EMAIL_ADDRESS="your-gmail-email"' >> ~/.<shell_rc_file>
 
 With pip3 installed
 
