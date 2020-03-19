@@ -9,7 +9,7 @@ from email import encoders
 import os
 
 def gen_daily_stats():
-    return os.system('vnstat -u && vnstati -vs -i wlp4s0 -o /home/kofi/workspace/personal/py/ius/img/daily_summary.png -d')
+    return os.system('vnstat -u && vnstati -vs -i wlp4s0 -o img/daily_summary.png -d')
 
 def send_mail(to, subject, text, files=[]):
     assert type(to)==list
@@ -46,6 +46,6 @@ if gen_daily_stats() == 0:
     recipients   = [os.environ['MY_EMAIL_ADDRESS']]
     subject      = "Internet usage for: "
     body         = "Please find attached your internet usage for the day"
-    summary_imgs = ["/home/kofi/workspace/personal/py/ius/img/daily_summary.png"]
+    summary_imgs = ["img/daily_summary.png"]
 
     send_mail(recipients, subject, body, summary_imgs)

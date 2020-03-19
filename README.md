@@ -37,7 +37,7 @@ Add the following to crontab -e
     # at the bottom of crontab -e
 
     # send daily internet usage stats at 11:59 PM every day
-    59 23 * * * source ~/.<shell_rc_file> && python <path-to-daily.py>
+    59 23 * * * source ~/.<shell_rc_file> && cd <path-to-daily.py> && python daily.py
 
     # send monthly internet usage stats at the last day of the month
-    59 23 28-31 * * source ~/.<shell_rc_file> && python <path-to-monthly.py>
+    59 23 28-31 * * source ~/.<shell_rc_file> && cd <path-to-monthly.py> && python monthly.py
