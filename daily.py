@@ -43,7 +43,7 @@ def send_mail(to, subject, text, files=[]):
 
 
 if gen_daily_stats() == 0:
-    recipients   = ["archykofi@gmail.com"]
+    recipients   = [os.environ['MY_EMAIL_ADDRESS']]
     subject      = "Internet usage for: "
     body         = "Please find attached your internet usage for the day"
     summary_imgs = ["/home/kofi/workspace/personal/py/ius/img/daily_summary.png"]

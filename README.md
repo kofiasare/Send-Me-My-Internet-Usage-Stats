@@ -8,11 +8,15 @@ Simple utility to send internet usage statistics using vnstat and vnstati linux 
 
 ### Monthly Stats
 
-![Daily Summary](img/monthly_summary.png)
+![Monthly Summary](img/monthly_summary.png)
 
 # Install
 
     $ sudo apt install vnstat && sudo apt install vnstati
+
+    $ echo 'export GMAIL_SMTP_ID="your-gmail-id"' >> ~/.<shell_rc_file>
+    $ echo 'export GMAIL_SMTP_PASSWORD="your-gmail-passwrod" >> ~/.<shell_rc_file>
+    $ echo 'export MY_EMAIL_ADDRESS='your-gmail-email' >> ~/.<shell_rc_file>
 
 With pip3 installed
 
@@ -20,11 +24,7 @@ With pip3 installed
 
 # Run script
 
-    $ python daily.py
-
-    or
-
-    $ python monthly.py
+    $ python daily.py && $ python monthly.py
 
 # Schedule with Crontab
 
@@ -37,7 +37,7 @@ Add the following to crontab -e
     # at the bottom of crontab -e
 
     # send daily internet usage stats at 11:59 PM every day
-    59 23 * * * source ~/.<shell-rc-file> && python <path-to-daily.py>
+    59 23 * * * source ~/.<shell_rc_file> && python <path-to-daily.py>
 
     # send monthly internet usage stats at the last day of the month
-    59 23 28-31 * * source ~/.<shell-rc-file> && python <path-to-monthly.py>
+    59 23 28-31 * * source ~/.<shell_rc_file> && python <path-to-monthly.py>
