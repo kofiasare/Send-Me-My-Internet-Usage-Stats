@@ -10,7 +10,7 @@ import datetime
 import os
 
 def gen_monthly_stats():
-    return os.system('vnstat -u && vnstati -vs -i wlp4s0 -o /home/kofi/workspace/personal/py/ius/img/monthly_summary.png -m')
+    return os.system('vnstat -u && vnstati -vs -i wlp4s0 -o img/monthly_summary.png -m')
 
 def send_mail(to, subject, text, files=[]):
     assert type(to)==list
@@ -47,6 +47,6 @@ if gen_monthly_stats() == 0:
     recipients   = [os.environ['MY_EMAIL_ADDRESS']]
     subject      = "Internet usage for the month: "
     body         = "Please find attached your internet usage for the month"
-    summary_imgs = ["/home/kofi/workspace/personal/py/ius/img/monthly_summary.png"]
+    summary_imgs = ["img/monthly_summary.png"]
 
     send_mail(recipients, subject, body, summary_imgs)
